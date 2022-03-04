@@ -1,0 +1,47 @@
+@font-face {
+  font-family: 'Inter';
+  src: url(./EB_Garamond/EBGaramond-VariableFont_wght.ttf);
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url(./EB_Garamond/EBGaramond-Italic-VariableFont_wght.ttf);
+  font-style: italic;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  height: 100vh;
+  background-color: ;
+}
+
+.branding-section {
+  width: 30vw;
+  flex: 1;
+  background-color: bisque;
+}
+
+.brand > img {
+  display: inline;
+  width: 100px;
+  height: auto;
+}
+
+.form-section {
+  width: auto;
+  flex: 2;
+}
+
+label {
+  font-variant: small-caps;
+}
+
+label {
+  display: block;
+}
