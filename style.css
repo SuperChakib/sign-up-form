@@ -18,30 +18,52 @@
 body {
   display: flex;
   height: 100vh;
-  background-color: ;
 }
 
 .branding-section {
-  width: 30vw;
-  flex: 1;
-  background-color: bisque;
+  background-color: red;
+  position: relative;
+}
+.branding-section > img {
+  height: 100%;
+  width: auto;
+  display: inline;
+}
+.brand-name {
+  position: absolute;
+  top: 40%;
+  left: 0;
+  background-color: rgba(50, 50, 50, 0.5);
+  width: 100%;
+  font-family: Inter;
+  text-transform: uppercase;
+  color: white;
+  font-size: max(5vh, 1rem);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+}
+.brand-name > img {
+  width: max(12vh, 30px);
+  height: auto;
+}
+.photo-credits {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  color: white;
+  font-size: clamp(0.5rem, 3vh, 2rem);
 }
 
-.brand > img {
-  display: inline;
-  width: 100px;
-  height: auto;
+a:visited {
+  color: white;
 }
 
 .form-section {
-  width: auto;
-  flex: 2;
 }
-
 label {
   font-variant: small-caps;
-}
-
-label {
   display: block;
 }
