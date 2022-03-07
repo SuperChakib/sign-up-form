@@ -13,52 +13,71 @@
       <p class="brand-name"><img src="./logo.png" alt="brand-logo" />Chakib</p>
       <p class="photo-credits">
         Photo by
-        <a href="https://unsplash.com/@abroderick8">Andrew Broderick</a> on
-        <a href="https://unsplash.com/">Unsplash</a>
+        <a href="https://unsplash.com/@abroderick8" target="_blank">Andrew Broderick</a> on
+        <a href="https://unsplash.com/" target="_blank">Unsplash</a>
       </p>
     </div>
-    <div class="form-section">
-      <section>
+    <div class="sign-up-section">
+      <section class="presentation">
         <p>
           This is not a real only service! You know you need something like this
           in your life to help you realize your deepest dreams. Sign up
           <span>now</span> to get started.
         </p>
+        <br />
         <p>You <span>know</span> you want.</p>
       </section>
-      <section>
-        <h2>Let's do this!</h2>
+      <section class="form">
+        <h2>Let's do this! <abbr title="Fields with an asterisk are mandatory">*</abbr> <span>(Fields with an asterisk are mandatory)</span></h2>
         <form id="my-form" action="#" method="get">
           <p>
-            <label for="">first name</label>
-            <input type="text" />
+            <label for="first-name">first name <abbr title="You cannot let this field empty" aria-label="required" aria-required="true">*</abbr></label>
+            <input id="first-name" name="first-name" type="text" required placeholder=" " />
           </p>
           <p>
-            <label for="">last name</label>
-            <input type="text" />
+            <label for="last-name">last name <abbr title="You cannot let this field empty" aria-label="required" aria-required="true">*</abbr></label></label>
+            <input id="last-name" name="last-name" type="text" placeholder=" " required />
           </p>
           <p>
-            <label for="">email</label>
-            <input type="email" />
+            <label for="email">email <abbr title="You cannot let this field empty" aria-label="required" aria-required="true">*</abbr></label></label>
+            <input id="email" name="email" type="email" placeholder=" " required />
           </p>
           <p>
-            <label for="">phone number</label>
-            <input type="tel" />
+            <label for="phone">phone number <abbr title="You cannot let this field empty" aria-label="required" aria-required="true">*</abbr></label></label>
+            <input id="phone" name="phone" type="tel" pattern="(\d{10})|(\d{2}[- ]\d{2}[- ]\d{2}[- ]\d{2}[- ]\d{2})" placeholder=" " required/>
+          </p>
+          <p id="check-password">
+            <label for="password">password <abbr title="You cannot let this field empty" aria-label="required" aria-required="true">*</abbr></label></label>
+            <input id="password" name="password" type="password" placeholder=" " required />
           </p>
           <p>
-            <label for="">password</label>
-            <input type="password" />
-          </p>
-          <p>
-            <label for="">confirm password</label>
-            <input type="password" />
+            <label for="confirm-password">confirm password <abbr title="You cannot let this field empty" aria-label="required" aria-required="true">*</abbr></label></label>
+            <input id="confirm-password" type="password" placeholder=" " required />
           </p>
         </form>
       </section>
-      <section>
+      <section class="buttons">
         <button type="submit" form="my-form">Create Account</button>
         <p>Already have an account? <a href="#">Log in</a></p>
       </section>
     </div>
   </body>
+  <script>
+    const password = document.getElementById("password");
+    const confirmPassword = document.getElementById("confirm-password");
+
+    errorMessage.style.setProperty('content', 'Bitch!')
+
+    confirmPassword.addEventListener('blur', checkPassword)
+
+    function checkPassword() {
+      if (password.value !== confirmPassword.value) {
+        password.className = 'error';
+        confirmPassword.className = 'error';
+      } else {
+        password.className = '';
+        confirmPassword.className = '';
+      }
+    }
+</script>
 </html>

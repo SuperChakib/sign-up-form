@@ -13,6 +13,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  font-family: Inter;
 }
 
 body {
@@ -20,9 +21,12 @@ body {
   height: 100vh;
 }
 
+/*branding section*/
 .branding-section {
-  background-color: red;
   position: relative;
+  background-color: red;
+  height: 100vh;
+  width: auto;
 }
 .branding-section > img {
   height: 100%;
@@ -31,7 +35,7 @@ body {
 }
 .brand-name {
   position: absolute;
-  top: 40%;
+  top: calc((100% - 12vh - 20px) / 2);
   left: 0;
   background-color: rgba(50, 50, 50, 0.5);
   width: 100%;
@@ -56,14 +60,116 @@ body {
   color: white;
   font-size: clamp(0.5rem, 3vh, 2rem);
 }
-
-a:visited {
+.branding-section a {
   color: white;
 }
 
-.form-section {
+/*sign-up section*/
+.sign-up-section {
+  background-color: whitesmoke;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.sign-up-section > section + section {
+  margin-top: 5vh;
+}
+h2 > span {
+  font-size: 1rem;
+}
+.presentation {
+  font-weight: bold;
+  padding-left: 5vw;
+  padding-right: 20vw;
+  font-size: max(14px, 1.3vw);
+}
+.presentation span {
+  font-style: italic;
+}
+.form {
+  padding-left: 5vw;
+  padding-bottom: 5vh;
+  box-shadow: 0 1vh 1vh lightgray;
+  background-color: white;
+}
+#my-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1vw;
+}
+#my-form > p {
+  width: 34%;
 }
 label {
   font-variant: small-caps;
   display: block;
+}
+input {
+  transition: 0.1s;
+  border-radius: 3px;
+  height: 1.5rem;
+  width: 70%;
+  border-style: none;
+  border: 1px solid black;
+  position: relative;
+}
+input:hover {
+  outline: 10px double tan;
+  outline-offset: 1.1em;
+}
+input:focus {
+  outline: 1px solid darkgreen;
+  outline-offset: 1px;
+}
+input:not(:focus):not(:placeholder-shown):invalid {
+  border: 1px solid red;
+}
+input::before {
+  content: 'x';
+  color: red;
+  top: 0;
+  left: 0;
+}
+.buttons {
+  padding-left: 5vw;
+}
+
+.buttons > button {
+  padding: 0.8em 2em;
+  margin-bottom: 3vh;
+  border-radius: 0.5em;
+  border: none;
+  color: white;
+  font-weight: bold;
+  box-shadow: 2px 2px lightgray;
+  background-color: tan;
+}
+button:hover {
+  background-color: burlywood;
+  cursor: pointer;
+}
+button:active {
+  background-color: lightgray;
+  color: tan;
+  box-shadow: 0 0;
+}
+.buttons a {
+  color: tan;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.error {
+  border: 1px solid red;
+}
+
+#check-password {
+  position: relative;
+}
+#check-password::after {
+  position: absolute;
+  bottom: -1rem;
+  left: 0;
+  color: red;
+  font-size: 0.8rem;
 }
